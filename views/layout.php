@@ -206,7 +206,7 @@
 
           <li>
             <a
-              href="./freelancers.html"
+              href="./index.php?view=getAllFreelancers"
               class="flex items-center p-2 text-white rounded-lg bg-orange-600 dark:text-white hover:text-gray-900 hover:bg-gray-100 dark:hover:bg-gray-700 group"
             >
               <svg
@@ -254,7 +254,7 @@
               </svg>
 
               <span class="flex-1 ml-3 whitespace-nowrap font-inter"
-                >Order</span
+                >Projects</span
               >
             </a>
           </li>
