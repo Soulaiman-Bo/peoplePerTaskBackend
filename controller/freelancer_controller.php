@@ -19,7 +19,11 @@ function updateFreelancer(){
 };
 
 
-function deleteFreelancer(){};
+function deleteFreelancer(){
+    $id = $_GET['user'];
+    require_once 'views/Freelancers/deleteFreelancer.php';
+
+};
 
 
 // ======= Actions ===========
@@ -31,5 +35,11 @@ function storeFreelancer(){
 function actionUpdateFreelancer(){
     extract($_POST);
     update($ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender);
+    header('location:?view=getAllFreelancers');
+}
+
+function actionDeleteFreelancer(){
+    $id = $_GET['user'];
+    delete($id);
     header('location:?view=getAllFreelancers');
 }

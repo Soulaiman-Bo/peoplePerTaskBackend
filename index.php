@@ -15,6 +15,9 @@ if (isset($_GET['view'])) {
         case 'updateFreelancer':
             updateFreelancer();
             break;
+        case 'deleteFreelancer':
+             deleteFreelancer();
+             break;
 
         default:
             echo '404';
@@ -31,6 +34,9 @@ if (isset($_GET['action'])) {
             break;
         case 'updateFreelancer':
              actionUpdateFreelancer();
+             break;
+        case 'deleteFreelancer':
+             actionDeleteFreelancer();
              break;
 
             
