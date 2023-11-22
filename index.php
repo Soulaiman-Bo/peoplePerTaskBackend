@@ -6,6 +6,7 @@ require_once './controller/freelancer_controller.php';
 if (isset($_GET['view'])) {
     $view = $_GET['view'];
     switch ($view) {
+
         case 'createFreelancer':
             createFreelancer();
             break;
@@ -18,7 +19,28 @@ if (isset($_GET['view'])) {
         case 'deleteFreelancer':
              deleteFreelancer();
              break;
+        default:
+            echo '404';
+            break;
+    }
+}
 
+if (isset($_GET['viewofproject'])) {
+    $view = $_GET['view'];
+    switch ($view) {
+
+        case 'createProject':
+            createProject();
+            break;
+        case 'getAllProjects':
+            getAllProjects();
+            break;
+        case 'updateProject':
+            updateProject();
+            break;
+        case 'deleteProject':
+            deleteProject();
+             break;
         default:
             echo '404';
             break;
@@ -37,8 +59,6 @@ if (isset($_GET['action'])) {
              break;
         case 'deleteFreelancer':
              actionDeleteFreelancer();
-             break;
-
-            
+             break; 
     }
 }
