@@ -17,7 +17,7 @@ ob_start();
 
 
 
-<table class="w-full shadow-md text-sm text-left text-gray-500 dark:text-gray-400">
+<table id="myTable" class="hover display w-full shadow-md text-sm text-left text-gray-500 dark:text-gray-400">
    
     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
         <tr>
@@ -38,6 +38,9 @@ ob_start();
             </th>
             <th scope="col" class="px-6 py-3">
                 Edit
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Delete
             </th>
         </tr>
     </thead>
@@ -71,15 +74,78 @@ ob_start();
                 </div>
             </td>
             <td class="px-6 py-4">
-                <a href="#" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit
+                <a href="index.php?view=updateFreelancer&user=<?= $freelancer->ID ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">Edit
+                    user</a>
+            </td>
+            <td class="px-6 py-4">
+                <a href="index.php?view=deleteFreelancer&user=<?= $freelancer->ID ?>" class="font-medium text-red-600 dark:text-red-500 hover:underline">Delete
                     user</a>
             </td>
         </tr>
         <?php endforeach; ?>
     </tbody>
+
+    <foot class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+        <tr>
+            <th scope="col" class="px-6 py-3">
+                Full Name
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Position
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Region
+            </th>
+            <th scope="col" class="px-6 py-3">
+                City
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Gender
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Edit
+            </th>
+            <th scope="col" class="px-6 py-3">
+                Delete
+            </th>
+        </tr>
+    </foot>
     
 </table>
-</div>
+
+<!-- <table id="myTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Donna Snider</td>
+                <td>Customer Support</td>
+                <td>New York</td>
+                <td>27</td>
+                <td>2011-01-25</td>
+                <td>$112,000</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <th>Name</th>
+                <th>Position</th>
+                <th>Office</th>
+                <th>Age</th>
+                <th>Start date</th>
+                <th>Salary</th>
+            </tr>
+        </tfoot>
+    </table>
+</div> -->
 
 
 <?php

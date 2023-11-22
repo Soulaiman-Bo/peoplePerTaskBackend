@@ -19,6 +19,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/dataTables.tailwindcss.min.css" />
     <link href="public/css/output.css" rel="stylesheet" />
     <title>Freelancers - peoplepertask</title>
   </head>
@@ -323,6 +324,10 @@
 
     </main>
 
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/dataTables.tailwindcss.min.js"></script>    
     <script src="public/js/dashboard.js"></script>
     <script src="public/js/theme.js"></script>
   </body>

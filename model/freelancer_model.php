@@ -49,9 +49,33 @@ function getAll()
     $pdo = dbConnect();
     return $pdo->query('SELECT * FROM freelancers ORDER BY id ASC')->fetchAll(PDO::FETCH_OBJ);
 };
+
+
+function getOne($id) {
+    $pdo = dbConnect();
+    $sqlState = $pdo->prepare("SELECT * FROM freelancers WHERE id = ?");
+    $sqlState->execute([$id]);
+    return $sqlState->fetch(PDO::FETCH_OBJ);
+}
+
 function delete()
 {
 };
-function update()
+
+
+function update($ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender)
 {
+    $pdo = dbConnect();
+    $sqlState = $pdo->prepare("UPDATE freelancers
+    SET firstname = ? ,
+        lastname = ? , 
+        email = ? , 
+        number = ? , 
+        competences = ?,
+        region= ?,
+        city = ?,
+        gender = ?
+    WHERE ID = ?");
+    return $sqlState->execute([$firstname, $lastname, $email, $number, $competences, $region, $city, $gender, $ID]);
+
 };

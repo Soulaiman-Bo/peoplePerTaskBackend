@@ -5,6 +5,11 @@ var themeToggleLightIcon = document.getElementById('theme-toggle-light-icon');
 var dropdownUser = document.getElementById("dropdown-user-button")
 
 
+new DataTable('#myTable');
+
+// $(document).ready(function () {     $('#myTable').DataTable(); });
+
+
 
 dropdownUser.addEventListener("click", () => {
     document.getElementById("dropdown-user").classList.toggle('hidden')
