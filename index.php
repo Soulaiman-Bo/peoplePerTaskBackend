@@ -27,6 +27,21 @@ if (isset($_GET['view'])) {
     }
 }
 
+if (isset($_GET['action'])) {
+    $action = $_GET['action'];
+    switch ($action) {
+        case 'storeFreelancer':
+             storeFreelancer();
+            break;
+        case 'updateFreelancer':
+             actionUpdateFreelancer();
+             break;
+        case 'deleteFreelancer':
+             actionDeleteFreelancer();
+             break; 
+    }
+}
+
 if (isset($_GET['viewofCategory'])) {
     $view = $_GET['viewofCategory'];
     switch ($view) {
@@ -48,6 +63,22 @@ if (isset($_GET['viewofCategory'])) {
             break;
     }
 }
+
+if (isset($_GET['actioncategory'])) {
+    $action = $_GET['actioncategory'];
+    switch ($action) {
+        case 'storeCategory':
+            storeCategory();
+            break;
+        case 'updateCategory':
+             actionUpdateCategory();
+             break;
+        case 'deleteCategory':
+             actionDeleteCategory();
+             break; 
+    }
+}
+
 
 if (isset($_GET['viewofproject'])) {
     $view = $_GET['viewofproject'];
@@ -71,21 +102,6 @@ if (isset($_GET['viewofproject'])) {
     }
 }
 
-if (isset($_GET['action'])) {
-    $action = $_GET['action'];
-    switch ($action) {
-        case 'storeFreelancer':
-             storeFreelancer();
-            break;
-        case 'updateFreelancer':
-             actionUpdateFreelancer();
-             break;
-        case 'deleteFreelancer':
-             actionDeleteFreelancer();
-             break; 
-    }
-}
-
 if (isset($_GET['actionProject'])) {
     $action = $_GET['actionProject'];
     switch ($action) {
@@ -101,18 +117,4 @@ if (isset($_GET['actionProject'])) {
     }
 }
 
-if (isset($_GET['actioncategory'])) {
-    $action = $_GET['actioncategory'];
-    switch ($action) {
-        case 'storeCategory':
-            storeCategory();
-            break;
-        case 'updateCategory':
-             actionUpdateCategory();
-             break;
-        case 'deleteCategory':
-             actionDeleteCategory();
-             break; 
-    }
-}
 

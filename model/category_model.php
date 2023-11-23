@@ -19,53 +19,75 @@
 
 function createCat()
 {
-    $pdo = dbConnect();
+  
     extract($_POST);
+    $conn = dbConnect();
 
     $parentCategoryId;
 
     if ($parentcategory == 'null') {
         $parentCategoryId = null;
     } else {
-        $getID = $pdo->prepare(
-            "SELECT ID FROM category WHERE category_name = ?"
-        );
-        $parentCategoryId = $getID->execute([$parentcategory]);
-        die($parentCategoryId);
+        $sql = "SELECT ID FROM category WHERE category_name = '$parentcategory'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $parentCategoryId = $row['ID'];
     }
 
 
-    $sqlState = $pdo->prepare(
-        "INSERT INTO category (category_name, parent_caregory)
-        VALUES (?, ?)"
-    );
+    
+    $sql = "INSERT INTO category (category_name, parent_caregory) VALUES ('$name', '$parentCategoryId')";
+    $result = $conn->query($sql);
+    $conn->close();
+    return  $result;
 
-    return $sqlState->execute(
-        [
-            $name,
-            $parentCategoryId
-        ]
-    );
 };
+
+
 function getAllCat()
 {
-
-    $pdo = dbConnect();
-    return $pdo->query('SELECT * FROM category ORDER BY ID ASC')->fetchAll(PDO::FETCH_OBJ);
+    $conn = dbConnect();
+    $sql = "SELECT * FROM category ORDER BY ID ASC";
+    $result = $conn->query($sql);
+    $conn->close();
+    return  $result;
 };
 
 function getOneCat($id)
 {
-    $pdo = dbConnect();
-    $sqlState = $pdo->prepare("SELECT * FROM category WHERE ID = ?");
-    $sqlState->execute([$id]);
-    return $sqlState->fetch(PDO::FETCH_OBJ);
+    $conn = dbConnect();
+    $sql = "SELECT * FROM category WHERE ID = $id";
+    $result = $conn->query($sql);
+    $row = $result->fetch_assoc();
+    $conn->close();
+    return  $row;
 }
 
 function deleteCat($ID)
 {
+    $conn = dbConnect();
+    $sql = "DELETE FROM category WHERE ID = $ID";
+    $result = $conn->query($sql);
+    $conn->close();
+    return $result;
 };
 
-function updateCat($ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender)
+function updateCat($ID, $category_name, $parent_caregory)
 {
+    $conn = dbConnect();
+
+    if ($parent_caregory == 'null') {
+        $parentCategoryId = null;
+    } else {
+        $sql = "SELECT ID FROM category WHERE category_name = '$parent_caregory'";
+        $result = $conn->query($sql);
+        $row = $result->fetch_assoc();
+        $parentCategoryId = $row['ID'];
+    }
+
+    
+    $sql = " UPDATE category SET category_name = '$category_name', parent_caregory = '$parentCategoryId' WHERE ID = $ID";
+    $result = $conn->query($sql);
+    $conn->close();
+    return  $result;
 };

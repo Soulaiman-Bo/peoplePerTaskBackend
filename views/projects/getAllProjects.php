@@ -2,11 +2,13 @@
 ob_start();
 ?>
 
+<a href="./index.php?viewofproject=createProject" data-modal-target="authentication-modal" data-modal-toggle="authentication-modal" class="block mb-7 font-inter text-white w-fit bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" type="button">
+        + Add New Project
+</a>
 
 <div class="flex flex-col justify-center items-center">
-        <div
-          class="flex flex-col max-w-3xl gap-5 p-5 border rounded-xl bg-white"
-        >
+
+        <div class="flex flex-col max-w-3xl gap-5 p-5 border rounded-xl bg-white">
           <p class="text-2xl mb-3 text-orange-600">HTML and CSS Developer</p>
           <p class="text-orange-900">
             Hourly: <strong>$15 - $30</strong> - Posted 4 hours ago
@@ -45,7 +47,7 @@ ob_start();
           </p>
           <p class="font-semibold text-primary-950">France</p>
         </div>
-      </div>
+</div>
 
 <?php
 $content = ob_get_clean();

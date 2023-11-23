@@ -34,21 +34,21 @@ ob_start();
       <tbody>
        
 
-        <?php foreach ($allCategories as $category) : ?>
+        <?php foreach ($result as $row) : ?>
           <tr class="bg-white dark:bg-gray-800">
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <?= $category->category_name ?>
+          <?= $row["category_name"] ?>
           </th>
           <td class="px-6 py-4">
             Black
           </td>
           <td class="px-6 py-4">
-            <a href="index.php?viewofCategory=updatecategory&category=<?= $category->ID ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+            <a href="index.php?viewofCategory=updatecategory&category=<?=  $row["ID"] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
             Edit
           </a>
           </td>
           <td class="px-6 py-4">
-            <a href="index.php?viewofCategory=deletecategory&category=<?= $category->ID ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+            <a href="index.php?viewofCategory=deletecategory&category=<?= $row["ID"] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
             Delete
           </a>
           </td>
