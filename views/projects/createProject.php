@@ -3,8 +3,8 @@ ob_start();
 ?>
 
 
-<div class="h-fit max-w-3xl">
-        <form action="index.php?action=storeFreelancer" method="POST" class="max-w-xl mx-auto bg-white border p-8 rounded-2xl ">
+<div class="h-fit ">
+        <form action="index.php?actionProject=storeProject" method="POST" class="max-w-xl mx-auto bg-white border p-8 rounded-2xl ">
     
             <div class="mb-5">
                 <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>

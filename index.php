@@ -1,6 +1,8 @@
 <?php
 
 require_once './controller/freelancer_controller.php';
+require_once './controller/project_controller.php';
+require_once './controller/categoy_controller.php';
 
 
 if (isset($_GET['view'])) {
@@ -25,8 +27,30 @@ if (isset($_GET['view'])) {
     }
 }
 
+if (isset($_GET['viewofCategory'])) {
+    $view = $_GET['viewofCategory'];
+    switch ($view) {
+
+        case 'createcategory':
+            createcategory();
+            break;
+        case 'getAllcategories':
+            getAllcategories();
+            break;
+        case 'updatecategory':
+            updatecategory();
+            break;
+        case 'deletecategory':
+            deletecategory();
+             break;
+        default:
+            echo '404';
+            break;
+    }
+}
+
 if (isset($_GET['viewofproject'])) {
-    $view = $_GET['view'];
+    $view = $_GET['viewofproject'];
     switch ($view) {
 
         case 'createProject':
@@ -47,7 +71,6 @@ if (isset($_GET['viewofproject'])) {
     }
 }
 
-
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
@@ -62,3 +85,34 @@ if (isset($_GET['action'])) {
              break; 
     }
 }
+
+if (isset($_GET['actionProject'])) {
+    $action = $_GET['actionProject'];
+    switch ($action) {
+        case 'storeProject':
+             storeProject();
+            break;
+        case 'updateProject':
+             actionUpdateProject();
+             break;
+        case 'deleteProject':
+             actionDeleteProject();
+             break; 
+    }
+}
+
+if (isset($_GET['actioncategory'])) {
+    $action = $_GET['actioncategory'];
+    switch ($action) {
+        case 'storeCategory':
+            storeCategory();
+            break;
+        case 'updateCategory':
+             actionUpdateCategory();
+             break;
+        case 'deleteCategory':
+             actionDeleteCategory();
+             break; 
+    }
+}
+

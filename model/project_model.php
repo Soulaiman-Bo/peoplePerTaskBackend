@@ -1,30 +1,36 @@
 <?php
 
-function dbConnect()
+// function dbConnect()
+// {
+//     return new PDO('mysql:dbname=peoplepertask;host=localhost', 'root', '');
+// }
+
+function createPR()
 {
-    return new PDO('mysql:dbname=peoplepertask;host=localhost', 'root', '');
+    $pdo = dbConnect();
+    extract($_POST);
+
+    $sqlState = $pdo->prepare(
+        "INSERT INTO projects (firstname, lastname, email, number, competences, region, city, gender)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?)"
+    );
+};
+function getAllPR()
+{
+
+};
+
+function getOnePR($id) 
+{
+
 }
 
-function create()
-{
- 
-};
-function getAll()
+function deletePR($ID)
 {
 
 };
 
-function getOne($id) 
-{
-
-}
-
-function delete($ID)
-{
-
-};
-
-function update($ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender)
+function updatePR($ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender)
 {
 
 };

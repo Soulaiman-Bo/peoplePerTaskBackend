@@ -4,7 +4,7 @@ require_once 'model/freelancer_model.php';
 
 // ============ Views =========
 function getAllFreelancer(){
-    $allFreelancers =  getAll();
+    $result =  getAll();
     require_once 'views/Freelancers/getAllFreelancers.php';
 };
 
@@ -14,7 +14,8 @@ function createFreelancer(){
 
 function updateFreelancer(){
     $id = $_GET['user'];
-    $freelancer = getOne($id);
+    $result = getOne($id);
+    $row = $result->fetch_assoc();
     require_once 'views/Freelancers/updateFreelancer.php';
 };
 
