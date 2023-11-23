@@ -8,32 +8,29 @@ ob_start();
 
 <div class="flex flex-col justify-center items-center">
 
-        <div class="flex flex-col max-w-3xl gap-5 p-5 border rounded-xl bg-white">
-          <p class="text-2xl mb-3 text-orange-600">HTML and CSS Developer</p>
+        <?php foreach ($allProject as $project): ?>
+          <div class="flex flex-col max-w-3xl gap-5 p-5 border mb-10 rounded-xl bg-white">
+          <p class="text-2xl mb-3 text-orange-600"><?= $project['title'] ?></p>
           <p class="text-orange-900">
-            Hourly: <strong>$15 - $30</strong> - Posted 4 hours ago
+            Hourly: <strong>$<?= $project['minprice'] ?> - $<?= $project['maxprice'] ?></strong> - Posted 4 hours ago
           </p>
           <div class="flex gap-11 flex-wrap">
             <p class="flex flex-col font-semibold text-primary-950">
-              Less than 30 hrs/week
+              Less than <?= $project['hours'] ?> hrs/week
               <span class="font-medium text-gray-500">Hours Needed</span>
             </p>
             <p class="flex flex-col font-semibold text-primary-950">
-              Less than 1 month
+              Less than <?= $project['duration'] ?> month
               <span class="font-medium text-gray-500">Duration</span>
             </p>
             <p class="flex flex-col font-semibold text-primary-950">
-                Intermediat
+             <?= $project['experince'] ?>
                 <span class="font-medium text-gray-500">Experince Level</span>
               </p>
           </div>
           
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Id cum
-            dignissimos quas iste nulla quisquam tempore, voluptas sed odit
-            ullam pariatur atque quaerat ipsam commodi placeat labore tenetur
-            dolor maxime. Quod, debitis? Corporis rem ipsum architecto quisquam
-            qui dicta iusto!
+            <?= $project['description'] ?>
           </p>
           <p class="flex gap-3">
             <span class="bg-orange-200 py-2 px-3 rounded-2xl">HTML</span>
@@ -45,8 +42,11 @@ ob_start();
           <p class="font-medium text-gray-500">
             Proposals:<span class="font-semibold text-primary-950"> 50+</span>
           </p>
-          <p class="font-semibold text-primary-950">France</p>
+          <p class="font-semibold text-primary-950"> <?= $project['country'] ?></p>
         </div>
+        <?php endforeach; ?>
+
+       
 </div>
 
 <?php

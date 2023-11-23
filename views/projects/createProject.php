@@ -48,7 +48,7 @@ ob_start();
                     <option>Advanced</option>
                 </select>
             </div>
-    
+            category_id
             <div class="mb-5">
                 <label for="country" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your Country</label>
                 <select name="country" id="country" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
@@ -56,6 +56,17 @@ ob_start();
                     <option>Canada</option>
                     <option>France</option>
                     <option>Germany</option>
+                </select>
+            </div>
+
+            <div class="mb-5">
+                <label for="category_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your Category</label>
+                <select name="category_name" id="category_name" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+               
+                <?php foreach ($allCategories as $parent): ?>
+                     <option><?= $parent['category_name'] ?></option>
+                <?php endforeach; ?>
+
                 </select>
             </div>
     
