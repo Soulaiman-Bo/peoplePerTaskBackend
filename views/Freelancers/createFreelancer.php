@@ -2,7 +2,7 @@
 ob_start();
 ?>
 
-<?php 
+<?php
 // $ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender;
 $firstname = $lastname = $email = $number = $competences = $region = $city = $gender = "";
 $firstnameErr = $lastnameErr = $emailErr = $numberErr = $competencesErr = $regionErr = $cityErr = $genderErr = "";
@@ -97,15 +97,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
 
-    if (empty($firstnameErr) && empty($lastnameErr) && empty($emailErr) && empty($numberErr) &&
-        empty($competencesErr) && empty($regionErr) && empty($cityErr) && empty($genderErr)) {
-            create();
-            header('location:?view=getAllFreelancers');
+    if (
+        empty($firstnameErr) && empty($lastnameErr) && empty($emailErr) && empty($numberErr) &&
+        empty($competencesErr) && empty($regionErr) && empty($cityErr) && empty($genderErr)
+    ) {
+        create();
+        header('location:?view=getAllFreelancers');
     }
-
 }
 
-function test_input($data) {
+function test_input($data)
+{
     $data = trim($data);
     $data = stripslashes($data);
     $data = htmlspecialchars($data);
@@ -130,19 +132,19 @@ function test_input($data) {
 
         <div class="mb-5">
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
-            <input type="email"  name="email" value="<?php echo $email; ?>" id="email" placeholder="Jhon_doe@gmail.com" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+            <input type="email" name="email" value="<?php echo $email; ?>" id="email" placeholder="Jhon_doe@gmail.com" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
             <span class="error"> <?php echo $emailErr; ?></span>
         </div>
 
         <div class="mb-5">
             <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
-            <input type="tel"  name="number" value="<?php echo $number; ?>" id="number" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+            <input type="tel" name="number" value="<?php echo $number; ?>" id="number" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
             <span class="error"> <?php echo $numberErr; ?></span>
         </div>
 
         <div class="mb-5">
             <label for="competences" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">competences</label>
-            <input type="tel"  name="competences" value="<?php echo $competences; ?>" id="competences" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+            <input type="tel" name="competences" value="<?php echo $competences; ?>" id="competences" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
             <span class="error"> <?php echo $competencesErr; ?></span>
         </div>
 
@@ -150,10 +152,9 @@ function test_input($data) {
         <div class="mb-5">
             <label for="region" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your region</label>
             <select name="region" value="<?php echo $region; ?>" id="region" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option>United States</option>
-                <option value="1">Canada</option>
-                <option value="2">France</option>
-                <option value="3">Germany</option>
+                <?php foreach ($allregions as $region) : ?>
+                    <option value="<?= $region['id'] ?>"> <?= $region['region'] ?></option>
+                <?php endforeach; ?>
             </select>
             <span class="error"> <?php echo $regionErr; ?></span>
         </div>
@@ -161,10 +162,9 @@ function test_input($data) {
         <div class="mb-5">
             <label for="city" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Select your city</label>
             <select name="city" value="<?php echo $city; ?>" id="city" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                <option value="1">United States</option>
-                <option value="2">Canada</option>
-                <option value="3">France</option>
-                <option value="4">Germany</option>
+                <?php foreach ($allcities as $city) : ?>
+                    <option value="<?= $city['id'] ?>"> <?= $city['ville'] ?></option>
+                <?php endforeach; ?>
             </select>
             <span class="error"> <?php echo $cityErr; ?></span>
         </div>
@@ -173,13 +173,13 @@ function test_input($data) {
             <label for="gender" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Gender</label>
             <select id="gender" value="<?php echo $gender; ?>" name="gender" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                 <option>Male</option>
-                <option>Female</option> 
+                <option>Female</option>
             </select>
             <span class="error"> <?php echo $genderErr; ?></span>
         </div>
 
 
-        <Button type="submit"  class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create User</Button>
+        <Button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Create User</Button>
     </form>
 </div>
 

@@ -1,6 +1,8 @@
 <?php
 
 require_once 'model/freelancer_model.php';
+require_once 'model/region_city_model.php';
+
 
 // ============ Views =========
 function getAllFreelancer(){
@@ -9,12 +11,16 @@ function getAllFreelancer(){
 };
 
 function createFreelancer(){
+    $allregions = getAllRegions();
+    $allcities = getAllCities();
     require_once 'views/Freelancers/createFreelancer.php'; 
 };
 
 function updateFreelancer(){
     $id = $_GET['user'];
     $result = getOne($id);
+    $allregions = getAllRegions();
+    $allcities = getAllCities();
     $row = $result->fetch_assoc();
     require_once 'views/Freelancers/updateFreelancer.php';
 };
