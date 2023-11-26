@@ -4,7 +4,7 @@ require_once './controller/freelancer_controller.php';
 require_once './controller/project_controller.php';
 require_once './controller/categoy_controller.php';
 
-var_dump($_GET['view']);
+// var_dump($_GET['view']);
 
 if (isset($_GET['view'])) {
     $view = $_GET['view'];

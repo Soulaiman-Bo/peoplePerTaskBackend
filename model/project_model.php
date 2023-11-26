@@ -77,14 +77,14 @@ function deletePR($ID)
 
 };
 
-function updatePR($ID, $title, $description, $minprice, $maxprice, $hours, $duration, $experince, $country, $category_name)
+function updatePR($ID, $title, $description, $minprice, $maxprice, $hours, $duration, $experince, $country, $category)
 {
     $conn = dbConnect();
 
-    if ($category_name == 'null') {
+    if ($category == 'null') {
         $parentCategoryId = null;
     } else {
-        $sql = "SELECT ID FROM category WHERE category_name = '$category_name'";
+        $sql = "SELECT ID FROM category WHERE category_name = '$category'";
         $result = $conn->query($sql);
         $row = $result->fetch_assoc();
         $parentCategoryId = $row['ID'];
