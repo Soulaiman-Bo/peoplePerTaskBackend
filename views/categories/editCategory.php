@@ -3,30 +3,91 @@ ob_start();
 ?>
 
 
+<?php 
+
+$ID = $name = $parentcategory  = "";
+$nameErr = $parentcategoryErr = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST"){
+
+    $ID = $_POST["ID"];
+
+      // Validate name
+    if (empty($_POST["name"])) {
+        $nameErr = "Category Name is required";
+    } else {
+        $name = test_input($_POST["name"]);
+        // Check if lastname contains only letters and is within the specified length
+        if (!preg_match("/^[a-zA-Z]{1,50}$/", $name)) {
+            $nameErr = "Only letters allowed, not more than 50 characters, not less than 1 characters";
+        }
+    }
+
+
+
+     // Validate name
+     if (empty($_POST["parentcategory"])) {
+        $parentcategoryErr = "Title is required";
+    } else {
+        $parentcategory = test_input($_POST["parentcategory"]);
+        // Check if title is within the specified length
+        if (strlen($parentcategory) < 1 || strlen($parentcategory) > 50) {
+            $parentcategoryErr = "Parent Category Title should be between 1 and 50 characters";
+        }
+    }
+
+    if (
+        
+        empty($nameErr) &&
+        empty($parentcategoryErr)
+        ) {
+            createCat();
+            header('location:?viewofCategory=getAllcategories');
+        }
+        
+}
+
+
+if($_SERVER["REQUEST_METHOD"] == "GET"){
+    $ID = $category['ID'];
+    $name =  $category['category_name'];
+    $parentcategory = $category['parent_caregory'];
+}
+
+// Function to sanitize input data
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?>
+
+
 <div class="h-fit ">
-        <form action="index.php?actioncategory=updateCategory" method="POST" class="max-w-xl mx-auto bg-white border p-8 rounded-2xl ">
+        <form action="index.php?viewofCategory=updatecategory&category=<?php echo $ID ?>" method="POST" class="max-w-xl mx-auto bg-white border p-8 rounded-2xl ">
     
             <div class="mb-5">
-                <input type="hidden" value="<?= $category['ID'] ?>" name="ID" id="ID" required>
+                <input type="hidden" value="<?php echo $ID ?>" name="ID" id="ID" required>
             </div>
 
             <div class="mb-5">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category name</label>
-                <input type="text" value="<?= $category['category_name'] ?>" name="name" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
+                <input type="text" value="<?php echo $name ?>" name="name" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
+                <span class="error"> <?php echo $nameErr; ?></span>
             </div>
     
 
             <div class="mb-5">
                 <label for="parentcategory" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Parent Category</label>
-                <select name="parentcategory" value="<?= $category['parent_caregory'] ?>"  id="parentcategory" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                <select name="parentcategory" value="<?php echo $parentcategory ?>"  id="parentcategory" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                     
                 <?php foreach ($allCategories as $parent): ?>
                      <option><?= $parent['category_name'] ?></option>
                 <?php endforeach; ?>
-                
-                   
                    
                 </select>
+                <span class="error"> <?php echo $parentcategoryErr; ?></span>
             </div>
     
            
