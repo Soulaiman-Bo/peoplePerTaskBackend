@@ -4,8 +4,8 @@ ob_start();
 
 <?php
 // $ID, $firstname, $lastname, $email, $number, $competences, $region, $city, $gender;
-$firstname = $lastname = $email = $number = $competences = $region = $city = $gender = "";
-$firstnameErr = $lastnameErr = $emailErr = $numberErr = $competencesErr = $regionErr = $cityErr = $genderErr = "";
+$firstname = $lastname = $email = $number  = $region = $city = $gender = "";
+$firstnameErr = $lastnameErr = $emailErr = $numberErr  = $regionErr = $cityErr = $genderErr = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate Firstname
@@ -53,15 +53,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     // Validate Competences
-    if (empty($_POST["competences"])) {
-        $competencesErr = "Competences are required";
-    } else {
-        $competences = test_input($_POST["competences"]);
-        // Check if competences contain only letters and are within the specified length
-        if (!preg_match("/^[a-zA-Z ,]{2,200}$/", $competences)) {
-            $competencesErr = "Only letters allowed, not more than 200 characters, not less than 2 characters";
-        }
-    }
+    // if (empty($_POST["competences"])) {
+    //     $competencesErr = "Competences are required";
+    // } else {
+    //     $competences = test_input($_POST["competences"]);
+    //     // Check if competences contain only letters and are within the specified length
+    //     if (!preg_match("/^[a-zA-Z ,]{2,200}$/", $competences)) {
+    //         $competencesErr = "Only letters allowed, not more than 200 characters, not less than 2 characters";
+    //     }
+    // }
 
     // Validate Region
     if (empty($_POST["region"])) {
@@ -99,10 +99,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if (
         empty($firstnameErr) && empty($lastnameErr) && empty($emailErr) && empty($numberErr) &&
-        empty($competencesErr) && empty($regionErr) && empty($cityErr) && empty($genderErr)
+        empty($regionErr) && empty($cityErr) && empty($genderErr)
     ) {
         create();
-        header('location:?view=getAllFreelancers');
+        header('location:?view=getAllUsers');
     }
 }
 
@@ -116,7 +116,7 @@ function test_input($data)
 ?>
 
 <div class="h-fit">
-    <form action="index.php?view=createFreelancer" method="POST" class="max-w-xl mx-auto bg-white border p-8 rounded-2xl ">
+    <form action="index.php?view=createUser" method="POST" class="max-w-xl mx-auto bg-white border p-8 rounded-2xl ">
 
         <div class="mb-5">
             <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Firstname</label>
@@ -142,11 +142,13 @@ function test_input($data)
             <span class="error"> <?php echo $numberErr; ?></span>
         </div>
 
-        <div class="mb-5">
+        <!-- <div class="mb-5">
             <label for="competences" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">competences</label>
-            <input type="tel" name="competences" value="<?php echo $competences; ?>" id="competences" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-            <span class="error"> <?php echo $competencesErr; ?></span>
-        </div>
+            <input type="tel" name="competences" value="<?php // echo $competences; ?>" id="competences" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
+            <span class="error"> <?php //echo $competencesErr; ?></span>
+        </div> -->
+
+        
 
 
         <div class="mb-5">

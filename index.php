@@ -1,6 +1,6 @@
 <?php
 
-require_once './controller/freelancer_controller.php';
+require_once './controller/user_controller.php';
 require_once './controller/project_controller.php';
 require_once './controller/categoy_controller.php';
 
@@ -8,19 +8,19 @@ require_once './controller/categoy_controller.php';
 
 if (isset($_GET['view'])) {
     $view = $_GET['view'];
-    switch ($view) {
 
-        case 'createFreelancer':
-            createFreelancer();
+    switch ($view) {
+        case 'createUser':
+            createUser();
             break;
-        case 'getAllFreelancers':
-            getAllFreelancer();
+        case 'getAllUsers':
+            getAllUser();
             break;
-        case 'updateFreelancer':
-            updateFreelancer();
+        case 'updateUser':
+            updateUser();
             break;
-        case 'deleteFreelancer':
-             deleteFreelancer();
+        case 'deleteUser':
+             deleteUser();
              break;
         default:
             echo '404';
@@ -31,14 +31,14 @@ if (isset($_GET['view'])) {
 if (isset($_GET['action'])) {
     $action = $_GET['action'];
     switch ($action) {
-        case 'storeFreelancer':
-             storeFreelancer();
+        case 'storeUser':
+             storeUser();
             break;
-        case 'updateFreelancer':
-             actionUpdateFreelancer();
+        case 'updateUser':
+             actionUpdateUser();
              break;
-        case 'deleteFreelancer':
-             actionDeleteFreelancer();
+        case 'deleteUser':
+             actionDeleteUser();
              break; 
     }
 }
