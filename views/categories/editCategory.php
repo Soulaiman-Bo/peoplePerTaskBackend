@@ -74,7 +74,7 @@ function test_input($data) {
             <div class="mb-5">
                 <label for="name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Category name</label>
                 <input type="text" value="<?php echo $name ?>" name="name" id="name" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
-                <span class="error"> <?php echo $nameErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $nameErr; ?></span>
             </div>
     
 
@@ -87,7 +87,7 @@ function test_input($data) {
                 <?php endforeach; ?>
                    
                 </select>
-                <span class="error"> <?php echo $parentcategoryErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $parentcategoryErr; ?></span>
             </div>
     
            

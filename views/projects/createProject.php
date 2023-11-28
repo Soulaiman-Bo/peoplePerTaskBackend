@@ -144,26 +144,26 @@ function test_input($data) {
             <div class="mb-5">
                 <label for="title" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Title</label>
                 <input type="text" value="<?php echo $title; ?>" name="title"  id="title" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
-                <span class="error"> <?php echo $titleErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $titleErr; ?></span>
             </div>
     
             <div class="mb-5">
                 <label for="description" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Description</label>
                 <input type="text" name="description" value="<?php echo $description; ?>" id="description" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
-                <span class="error"> <?php echo $descriptionErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $descriptionErr; ?></span>
             </div>
 
 
             <div class="mb-5">
                 <label for="minprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Minimum Hour Price</label>
                 <input type="number"  name="minprice" value="<?php echo $minprice; ?>" id="minprice" placeholder="30 hour" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                <span class="error"> <?php echo $minpriceErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $minpriceErr; ?></span>
             </div>
 
             <div class="mb-5">
                 <label for="maxprice" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Maximum Hour Price</label>
                 <input type="number"  name="maxprice" id="maxprice" value="<?php echo $maxprice; ?>" placeholder="30 hour" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                <span class="error"> <?php echo $maxpriceErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $maxpriceErr; ?></span>
             </div>
             
         
@@ -171,13 +171,13 @@ function test_input($data) {
             <div class="mb-5">
                 <label for="hours" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Hours Per Week</label>
                 <input type="number"  name="hours" value="<?php echo $hours; ?>" id="hours" placeholder="30 hour" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                <span class="error"> <?php echo $hoursErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $hoursErr; ?></span>
             </div>
     
             <div class="mb-5">
                 <label for="duration" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Duration</label>
                 <input type="number"  name="duration" value="<?php echo $duration; ?>" id="duration" placeholder="30 days" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-                <span class="error"> <?php echo $durationErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $durationErr; ?></span>
             </div>
     
     
@@ -188,7 +188,7 @@ function test_input($data) {
                     <option>Intermediate</option>
                     <option>Advanced</option>
                 </select>
-                <span class="error"> <?php echo $experinceErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $experinceErr; ?></span>
             </div>
          
             <div class="mb-5">
@@ -199,7 +199,7 @@ function test_input($data) {
                     <option>France</option>
                     <option>Germany</option>
                 </select>
-                <span class="error"> <?php echo $countryErr; ?></span>
+                <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $countryErr; ?></span>
             </div>
 
             <div class="mb-5">
@@ -207,11 +207,11 @@ function test_input($data) {
                 <select name="category_name" value="<?php echo $category_name; ?>" id="category_name" class="  bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
                
                 <?php foreach ($allCategories as $parent): ?>
-                     <option><?= $parent['category_name'] ?></option>
+                     <option value="<?= $parent['ID'] ?>"><?= $parent['category_name'] ?></option>
                 <?php endforeach; ?>
 
                 </select>
-                    <span class="error"> <?php echo $categoryErr; ?></span>
+                    <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $categoryErr; ?></span>
             </div>
     
     

@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;400;500;600;700;800&display=swap"
         rel="stylesheet">
-    <link href="/dist/output.css" rel="stylesheet">
+    <link href="public/css/output.css" rel="stylesheet" />
     <title>Dashboard - peoplepertask</title>
 </head>
 
@@ -37,7 +37,7 @@
                     </button>
 
                     <a href="/" class="flex ml-2 md:mr-24  items-center">
-                        <img src="/images/logo.webp" class="h-8 mr-6" alt="peoplepertask Logo" >
+                        <img src="public/images/logo.webp" class="h-8 mr-6" alt="peoplepertask Logo" >
                         <span class="font-inter font-semibold dark:text-white">PeaplePerTask</span>
                     </a>
                 </div>
@@ -49,7 +49,7 @@
                                 class="flex text-sm bg-gray-800 rounded-full focus:ring-4 focus:ring-gray-300 dark:focus:ring-gray-600"
                                 aria-expanded="false" id="dropdown-user-button" data-dropdown-toggle="dropdown-user">
                                 <span class="sr-only">Open user menu</span>
-                                <img class="w-8 h-8 rounded-full" src="../images/avatar.jpg" alt="user photo">
+                                <img class="w-8 h-8 rounded-full" src="public/images/avatar.jpg" alt="user photo">
 
                             </button>
                         </div>
@@ -107,124 +107,7 @@
         </div>
     </nav>
 
-    <aside id="logo-sidebar"
-        class="fixed top-0 left-0 z-40 w-64 h-screen pt-20 transition-transform -translate-x-full  bg-white border-r border-gray-200 dark:border-gray-800 smXl:translate-x-0 dark:bg-gray-800 "
-        aria-label="Sidebar">
-        <div class="h-full px-3 pb-4 overflow-y-auto bg-white dark:bg-gray-800">
-            <ul class="space-y-2 font-medium">
-                <li>
-                    <a  href="/"
-                        class="flex items-center p-2 text-white hover:text-gray-900 rounded-lg bg-orange-600  dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group ">
-                        <svg class="w-5 h-5 text-white transition duration-75 dark:text-white group-hover:text-gray-900 dark:group-hover:text-white"
-                            width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M2 6.27737C2 6.0311 2.12534 5.80007 2.33638 5.65735L7.53638 2.14078C7.81395 1.95307 8.18605 1.95307 8.46362 2.14078L13.6636 5.65735C13.8747 5.80007 14 6.0311 14 6.27737V12.8588C14 13.4891 13.4627 14 12.8 14H3.2C2.53726 14 2 13.4891 2 12.8588V6.27737Z"
-                                stroke="currentColor" stroke-width="2" />
-                        </svg>
-                        <span class="ml-3 font-inter ">Dashboard</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a  href="./freelancers.html"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M2.15845 13C3.04205 11.5262 4.97863 10.5175 7.99996 10.5175C11.0213 10.5175 12.9579 11.5262 13.8415 13M10.4 5.4C10.4 6.72548 9.32545 7.8 7.99996 7.8C6.67448 7.8 5.59996 6.72548 5.59996 5.4C5.59996 4.07452 6.67448 3 7.99996 3C9.32545 3 10.4 4.07452 10.4 5.4Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
-                        </svg>
-
-                        <span class="flex-1 ml-3 whitespace-nowrap font-inter">Freelancers</span>
-                    </a>
-                </li>
-
-                  <li>
-                <a href="./index.php?viewofproject=getAllProjects" class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                    <!-- <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M2 9.5H5L6 10.55H10L11 9.5H14M3.5 14C2.67157 14 2 13.3284 2 12.5V3.5C2 2.67157 2.67157 2 3.5 2H12.5C13.3284 2 14 2.67157 14 3.5V12.5C14 13.3284 13.3284 14 12.5 14H3.5Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> -->
-
-
-                    <!-- <svg width="16" height="16" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M17 1C18.1046 1 19 1.88316 19 2.9726L19 6.33992C19 7.42936 18.1046 8.31252 17 8.31252H14C12.8954 8.31252 12 7.42936 12 6.33992L12 2.9726C12 1.88316 12.8954 1 14 1L17 1Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M3 1C1.89543 1 0.999999 1.88316 0.999999 2.9726L1.00001 6.33992C1.00001 7.42936 1.89544 8.31252 3.00001 8.31252H6.00001C7.10458 8.31252 8.00001 7.42936 8.00001 6.33992L8 2.9726C8 1.88316 7.10457 1 6 1L3 1Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M17 11.6875C18.1046 11.6875 19 12.5707 19 13.6601V17.0274C19 18.1168 18.1046 19 17 19H14C12.8954 19 12 18.1168 12 17.0274L12 13.6601C12 12.5707 12.8954 11.6875 14 11.6875H17Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        <path d="M3.00001 11.6875C1.89544 11.6875 1.00001 12.5707 1.00001 13.6601L1.00001 17.0274C1.00001 18.1168 1.89544 19 3.00001 19H6.00001C7.10458 19 8.00001 18.1168 8.00001 17.0274L8.00001 13.6601C8.00001 12.5707 7.10458 11.6875 6.00001 11.6875H3.00001Z" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg> -->
-
-                    <svg class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M18.4375 11C18.9898 11 19.4375 10.5523 19.4375 10C19.4375 9.44772 18.9898 9 18.4375 9L18.4375 11ZM18 10C18 14.4183 14.4183 18 10 18V20C15.5228 20 20 15.5228 20 10H18ZM10 18C5.58172 18 2 14.4183 2 10H0C0 15.5228 4.47715 20 10 20V18ZM2 10C2 5.58172 5.58172 2 10 2V0C4.47715 0 0 4.47715 0 10H2ZM10 2C14.4183 2 18 5.58172 18 10H20C20 4.47715 15.5228 0 10 0V2ZM10 18C9.78721 18 9.50566 17.9056 9.16241 17.5738C8.81434 17.2373 8.45521 16.7021 8.13192 15.9631C7.48665 14.4882 7.0625 12.3807 7.0625 10H5.0625C5.0625 12.5898 5.51979 14.9823 6.29961 16.7648C6.68887 17.6545 7.1782 18.4373 7.77228 19.0117C8.37118 19.5907 9.12548 20 10 20V18ZM7.0625 10C7.0625 7.61928 7.48665 5.51177 8.13192 4.03686C8.45521 3.29792 8.81434 2.76272 9.16241 2.42621C9.50566 2.09436 9.78721 2 10 2V0C9.12548 0 8.37118 0.409315 7.77228 0.988315C7.1782 1.56266 6.68887 2.34548 6.29961 3.23522C5.51979 5.01767 5.0625 7.41015 5.0625 10H7.0625ZM10 20C10.8745 20 11.6288 19.5907 12.2277 19.0117C12.8218 18.4373 13.3111 17.6545 13.7004 16.7648C14.4802 14.9823 14.9375 12.5898 14.9375 10H12.9375C12.9375 12.3807 12.5133 14.4882 11.8681 15.9631C11.5448 16.7021 11.1857 17.2373 10.8376 17.5738C10.4943 17.9056 10.2128 18 10 18V20ZM14.9375 10C14.9375 7.41015 14.4802 5.01767 13.7004 3.23522C13.3111 2.34548 12.8218 1.56266 12.2277 0.988315C11.6288 0.409315 10.8745 0 10 0V2C10.2128 2 10.4943 2.09436 10.8376 2.42621C11.1857 2.76272 11.5448 3.29792 11.8681 4.03686C12.5133 5.51177 12.9375 7.61928 12.9375 10H14.9375ZM1 11L18.4375 11L18.4375 9L1 9L1 11Z" fill="black"/>
-                    </svg>
-                        
-                        
-                    <!-- <svg    fill="none"  xmlns="http://www.w3.org/2000/svg">
-                        <path d="M19 3C20.1046 3 21 3.88316 21 4.9726L21 8.33992C21 9.42936 20.1046 10.3125 19 10.3125H16C14.8954 10.3125 14 9.42936 14 8.33992L14 4.9726C14 3.88316 14.8954 3 16 3L19 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M5 3C3.89543 3 3 3.88316 3 4.9726L3.00001 8.33992C3.00001 9.42936 3.89544 10.3125 5.00001 10.3125H8.00001C9.10458 10.3125 10 9.42936 10 8.33992L10 4.9726C10 3.88316 9.10457 3 8 3L5 3Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M19 13.6875C20.1046 13.6875 21 14.5707 21 15.6601V19.0274C21 20.1168 20.1046 21 19 21H16C14.8954 21 14 20.1168 14 19.0274L14 15.6601C14 14.5707 14.8954 13.6875 16 13.6875H19Z" stroke="black" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M5.00001 13.6875C3.89544 13.6875 3.00001 14.5707 3.00001 15.6601L3.00001 19.0274C3.00001 20.1168 3.89544 21 5.00001 21H8.00001C9.10458 21 10 20.1168 10 19.0274L10 15.6601C10 14.5707 9.10458 13.6875 8.00001 13.6875H5.00001Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg> -->
-
-
-                    <!-- <svg xmlns="http://www.w3.org/2000/svg" class="flex-shrink-0 w-5 h-5 text-gray-500 dark:text-gray-400 transition duration-75 group-hover:text-gray-900 dark:group-hover:text-white" width="16" height="16" viewBox="0 0 16 16" fill="none">
-                        <path d="M21 15a9.11 9.11 0 0 0-.18-1.81 8.53 8.53 0 0 0-.53-1.69 8.08 8.08 0 0 0-.83-1.5 8.73 8.73 0 0 0-1.1-1.33A8.27 8.27 0 0 0 17 7.54a8.08 8.08 0 0 0-1.53-.83L15 6.52V5a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v1.52l-.5.19a8.08 8.08 0 0 0-1.5.83 8.27 8.27 0 0 0-1.33 1.1A8.27 8.27 0 0 0 4.54 10a8.08 8.08 0 0 0-.83 1.53 9 9 0 0 0-.53 1.69A9.11 9.11 0 0 0 3 15v3H2v2h20v-2h-1zM5 15a7.33 7.33 0 0 1 .14-1.41 6.64 6.64 0 0 1 .41-1.31 7.15 7.15 0 0 1 .64-1.19 7.15 7.15 0 0 1 1.9-1.9A7.33 7.33 0 0 1 9 8.68V15h2V6h2v9h2V8.68a8.13 8.13 0 0 1 .91.51 7.09 7.09 0 0 1 1 .86 6.44 6.44 0 0 1 .85 1 6 6 0 0 1 .65 1.19 7.13 7.13 0 0 1 .41 1.31A7.33 7.33 0 0 1 19 15v3H5z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
-                    </svg> -->
-
-                    <span class="flex-1 ml-3 whitespace-nowrap font-inter">Projects</span>
-                </a>
-            </li>
-
-                <li>
-                    <a  href="/"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M2 9.5H5L6 10.55H10L11 9.5H14M3.5 14C2.67157 14 2 13.3284 2 12.5V3.5C2 2.67157 2.67157 2 3.5 2H12.5C13.3284 2 14 2.67157 14 3.5V12.5C14 13.3284 13.3284 14 12.5 14H3.5Z"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-
-                        <span class="flex-1 ml-3 whitespace-nowrap font-inter">Order</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a  href="/"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-
-
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path
-                                d="M14.4003 4.19996L1.60068 4.19978L1.59985 4.2M14.4003 4.19996L14.3999 13.0773C14.3999 13.9183 13.7052 14.6 12.8483 14.6H3.15137C2.29449 14.6 1.59985 13.9183 1.59985 13.0773V4.2M14.4003 4.19996L11.8342 1.63431C11.6841 1.48429 11.4807 1.4 11.2685 1.4H4.73122C4.51905 1.4 4.31557 1.48428 4.16554 1.63431L1.59985 4.2M10.3999 6.6C10.3999 7.92548 9.32534 9 7.99985 9C6.67437 9 5.59985 7.92548 5.59985 6.6"
-                                stroke="currentColor" stroke-width="1.5" stroke-linecap="round"
-                                stroke-linejoin="round" />
-                        </svg>
-
-
-
-                        <span class="flex-1 ml-3 whitespace-nowrap font-inter">Offers</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a  href="/"
-                        class="flex items-center p-2 text-gray-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 group">
-                        <svg class="flex-shrink-0 w-5 h-5 text-gray-500 transition duration-75 dark:text-gray-400 group-hover:text-gray-900 dark:group-hover:text-white"
-                            aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 18 16">
-                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M1 8h11m0 0L8 4m4 4-4 4m4-11h3a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2h-3" />
-                        </svg>
-                        <span class="flex-1 ml-3 whitespace-nowrap font-inter">Sign In</span>
-                    </a>
-                </li>
-
-            </ul>
-        </div>
-    </aside>
+    <?php require_once "./views/includes/sideBar.php" ?>
 
     <main class=" mt-14 p-12 ml-0 smXl:ml-64  dark:border-gray-700">
         <div class="cards flex flex-wrap justify-center tablet:justify-between gap-6 mb-12 ">
@@ -242,7 +125,7 @@
                 <div class="data_container flex justify-between">
                     <div class="left">
                         <p class="font-bold dark:text-gray-200 text-lg font-inter">32</p>
-                        <p class="font-medium text-[#7F7D83] font-inter">Offer Posted</p>
+                        <p class="font-medium text-[#7F7D83] font-inter">Project Posted</p>
                     </div>
 
                     <div
@@ -251,6 +134,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="bg-white dark:bg-gray-800 card border border-[#D9D9DE] dark:border-gray-700 w-full max-w-[30rem]  tablet:max-w-[20rem] p-5 rounded-xl">
                 <div class="icon_container mb-9">
                     <span class="h-9 w-9 bg-[#FFD58F] rounded-full flex justify-center
@@ -267,7 +151,7 @@
                 <div class="data_container flex justify-between">
                     <div class="left">
                         <p class="font-bold dark:text-gray-200  text-lg font-inter">60</p>
-                        <p class="font-medium text-[#7F7D83] font-inter">Active Freelancers</p>
+                        <p class="font-medium text-[#7F7D83] font-inter">Number of Freelancers</p>
                     </div>
 
                     <div class="right pr-2 pl-2 bg-red-100 w-fit rounded-lg flex items-center border border-red-300">
@@ -275,6 +159,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="bg-white dark:bg-gray-800 card border border-[#D9D9DE] dark:border-gray-700 w-full max-w-[30rem]  tablet:max-w-[20rem] p-5 rounded-xl">
                 <div class="icon_container mb-9">
                     <span class="h-9 w-9 bg-[#EBF1FD] rounded-full flex justify-center
@@ -291,7 +176,7 @@
                 <div class="data_container flex justify-between">
                     <div class="left">
                         <p class="font-bold dark:text-gray-200  text-lg font-inter">325</p>
-                        <p class="font-medium text-[#7F7D83] font-inter">Active Jobs</p>
+                        <p class="font-medium text-[#7F7D83] font-inter">Number of users</p>
                     </div>
 
                     <div
@@ -300,6 +185,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="bg-white dark:bg-gray-800 card border border-[#D9D9DE] dark:border-gray-700 w-full max-w-[30rem]  tablet:max-w-[20rem] p-5 rounded-xl">
                 <div class="icon_container mb-9">
                     <span class="h-9 w-9  rounded-full flex justify-center
@@ -325,13 +211,12 @@
                     </div>
                 </div>
             </div>
+
         </div>
     </main>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
-    <script src="../js/theme.js"></script>
-    <script src="../js/dashboard.js"></script>
+    <script src="public/js/dashboard.js"></script>
+    <script src="public/js/theme.js"></script>
 </body>
 
 </html>

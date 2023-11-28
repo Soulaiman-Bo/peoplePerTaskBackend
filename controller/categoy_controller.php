@@ -5,7 +5,7 @@ require_once 'model/category_model.php';
 
 // ============ Views =========
 function getAllcategories(){
-    $result =  getAllCat();
+    $result =  getAllCatWithParent();
     require_once 'views/categories/getAllcategories.php';
 };
 

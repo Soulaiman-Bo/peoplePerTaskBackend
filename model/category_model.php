@@ -6,15 +6,13 @@
 // }
 
 
-// CREATE TABLE category (
-//     ID INT AUTO_INCREMENT PRIMARY KEY,
-//     category_name varchar(100),
-//     parent_caregory int,
-//     created_At datetime default now(),
-//     modified_At datetime default now(),
-//     FOREIGN KEY(parent_caregory) REFERENCES category(ID) ON DELETE SET NULL
-// );
-
+// CREATE TABLE `category` ( 
+//     `ID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, 
+//     `category_name` varchar(100) DEFAULT NULL, 
+//     `parent_caregory` int DEFAULT NULL, 
+//     `created_At` datetime DEFAULT CURRENT_TIMESTAMP, 
+//     `modified_At` datetime DEFAULT CURRENT_TIMESTAMP, 
+//     FOREIGN KEY (parent_caregory) REFERENCES `category`(ID) on DELETE CASCADE ON UPDATE CASCADE );
 
 
 function createCat()
@@ -26,17 +24,20 @@ function createCat()
     $parentCategoryId;
 
     if ($parentcategory == 'null') {
-        $parentCategoryId = null;
-    } else {
-        $sql = "SELECT ID FROM category WHERE category_name = '$parentcategory'";
-        $result = $conn->query($sql);
-        $row = $result->fetch_assoc();
-        $parentCategoryId = $row['ID'];
+        $parentcategory = NULL;
     }
+
+    // else {
+    //     $sql = "SELECT ID FROM category WHERE category_name = '$parentcategory'";
+    //     $result = $conn->query($sql);
+    //     $row = $result->fetch_assoc();
+    //     $parentCategoryId = $row['ID'];
+    // }
+
 
 
     
-    $sql = "INSERT INTO category (category_name, parent_caregory) VALUES ('$name', '$parentCategoryId')";
+    $sql = "INSERT INTO category (category_name, parent_caregory) VALUES ('$name', '$parentcategory')";
     $result = $conn->query($sql);
     $conn->close();
     return  $result;
@@ -44,13 +45,35 @@ function createCat()
 };
 
 
-function getAllCat()
+function getAllCatWithParent()
 {
     $conn = dbConnect();
-    $sql = "SELECT * FROM category ORDER BY ID ASC";
+    $sql = "SELECT C1.ID As ID,  C2.category_name AS category, C1.category_name AS parentCategory
+            FROM `category` C2
+            JOIN `category` C1
+            ON C1.ID = C2.parent_caregory";
+
     $result = $conn->query($sql);
     $conn->close();
     return  $result;
+
+
+// SELECT C2.category_name, C1.category_name
+// FROM `category` C2
+// JOIN `category` C1
+// ON C1.ID = C2.parent_caregory;
+
+};
+
+function getAllCat()
+{
+    $conn = dbConnect();
+    $sql = "SELECT * from category ORDER BY ID ASC ";
+    $result = $conn->query($sql);
+    $conn->close();
+    return  $result;
+
+
 };
 
 function getOneCat($id)

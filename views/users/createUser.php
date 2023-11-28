@@ -121,25 +121,27 @@ function test_input($data)
         <div class="mb-5">
             <label for="firstname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Firstname</label>
             <input type="text" name="firstname" value="<?php echo $firstname; ?>" id="firstname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
-            <span class="error"> <?php echo $firstnameErr; ?></span>
+            <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $firstnameErr; ?></span>
+            
+
         </div>
 
         <div class="mb-5">
             <label for="lastname" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Lastname</label>
             <input type="text" name="lastname" value="<?php echo $lastname; ?>" id="lastname" class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" placeholder="Jhon doe" required>
-            <span class="error"> <?php echo $lastnameErr; ?></span>
+            <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $lastnameErr; ?></span>
         </div>
 
         <div class="mb-5">
             <label for="email" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Email</label>
             <input type="email" name="email" value="<?php echo $email; ?>" id="email" placeholder="Jhon_doe@gmail.com" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-            <span class="error"> <?php echo $emailErr; ?></span>
+            <span cclass="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $emailErr; ?></span>
         </div>
 
         <div class="mb-5">
             <label for="number" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Phone Number</label>
             <input type="tel" name="number" value="<?php echo $number; ?>" id="number" placeholder="0615301530" required class="shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light" required>
-            <span class="error"> <?php echo $numberErr; ?></span>
+            <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $numberErr; ?></span>
         </div>
 
         <!-- <div class="mb-5">
@@ -158,7 +160,7 @@ function test_input($data)
                     <option value="<?= $region['id'] ?>"> <?= $region['region'] ?></option>
                 <?php endforeach; ?>
             </select>
-            <span class="error"> <?php echo $regionErr; ?></span>
+            <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $regionErr; ?></span>
         </div>
 
         <div class="mb-5">
@@ -168,7 +170,7 @@ function test_input($data)
                     <option value="<?= $city['id'] ?>"> <?= $city['ville'] ?></option>
                 <?php endforeach; ?>
             </select>
-            <span class="error"> <?php echo $cityErr; ?></span>
+            <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $cityErr; ?></span>
         </div>
 
         <div class="mb-5">
@@ -177,7 +179,7 @@ function test_input($data)
                 <option>Male</option>
                 <option>Female</option>
             </select>
-            <span class="error"> <?php echo $genderErr; ?></span>
+            <span class="mt-4 block ml-4 text-xs text-red-600 dark:text-red-400 "> <?php echo $genderErr; ?></span>
         </div>
 
 

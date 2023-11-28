@@ -37,24 +37,21 @@ ob_start();
         <?php foreach ($result as $row) : ?>
           <tr class="bg-white dark:bg-gray-800">
           <th scope="row" class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-          <?= $row["category_name"] ?>
+          <?= $row["category"] ?>
           </th>
           <td class="px-6 py-4">
-            Black
+          <?= $row["parentCategory"] ?>
           </td>
           <td class="px-6 py-4">
-            <a href="index.php?viewofCategory=updatecategory&category=<?=  $row["ID"] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-            Edit
-          </a>
+          <a href="index.php?viewofCategory=updatecategory&category=<?=  $row["ID"] ?>" class="font-medium font-inter text-blue-600 dark:text-blue-500 hover:underline">Edit</a>
           </td>
           <td class="px-6 py-4">
-            <a href="index.php?viewofCategory=deletecategory&category=<?= $row["ID"] ?>" class="font-medium text-blue-600 dark:text-blue-500 hover:underline">
-            Delete
-          </a>
+          <a href="index.php?viewofCategory=deletecategory&category=<?= $row["ID"] ?>" class="font-medium font-inter text-red-600 dark:text-red-500 hover:underline">Delete</a>
           </td>
         </tr>
         <?php endforeach; ?>
       </tbody>
+
 
 
     </table>
