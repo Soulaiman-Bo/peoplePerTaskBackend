@@ -14,6 +14,8 @@
 //     `modified_At` datetime DEFAULT CURRENT_TIMESTAMP, 
 //     FOREIGN KEY (parent_caregory) REFERENCES `category`(ID) on DELETE CASCADE ON UPDATE CASCADE );
 
+require_once "config/dbConnect.php";
+
 
 function createCat()
 {

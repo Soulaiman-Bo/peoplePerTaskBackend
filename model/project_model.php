@@ -22,6 +22,9 @@
 //     FOREIGN KEY (category_id) REFERENCES category(ID) ON DELETE CASCADE ON UPDATE CASCADE
 // );
 
+require_once "config/dbConnect.php";
+
+
 function createPR()
 {
     extract($_POST);

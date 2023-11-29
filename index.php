@@ -4,6 +4,7 @@ require_once './controller/user_controller.php';
 require_once './controller/project_controller.php';
 require_once './controller/categoy_controller.php';
 require_once './controller/freelancer_controller.php';
+require_once './controller/testimonial_controller.php';
 
 
 // var_dump($_GET['view']);
@@ -163,4 +164,17 @@ if (isset($_GET['actionOfFreelancer'])) {
     }
 }
 
+// ==========================================
 
+if (isset($_GET['viewoftestimonial'])) {
+    $view = $_GET['viewoftestimonial'];
+
+    switch ($view) {
+        case 'createtestimonial':
+            createtestimonial();
+            break;
+        default:
+            echo '404';
+            break;
+    }
+}
